@@ -12,8 +12,8 @@ urlpatterns = [
     path("codinghub/logic-2/no-teen-sum/", teen, name="TEEN"),
     path("codinghub/string-2/xyz-there", xyz, name="XYZ"),
     path("codinghub/list-2/centered-average", centered_average, name="AVERAGE"),
-    path("functionhub/", hub_page, name="hub"),
-    path("functionhub/hey/", Hey_You, name="HEY"),
-    path("functionhub/age_in_2050/", Age_in_2050, name="AGE"),
-    path("functionhub/order/", Order, name="ORDER"),
+    path("function/", hub_page, name="hub"),
+    path("function/hey/", Hey_You, name="HEY"),
+    path("function/age_in_2050/", Age_in_2050, name="AGE"),
+    path("function/order/", Order, name="ORDER"),
 ]

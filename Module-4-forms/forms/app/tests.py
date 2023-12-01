@@ -3,46 +3,46 @@ from django.test import SimpleTestCase
 # Create your tests here.
 class TestHeyYou(SimpleTestCase):
     def test_hey_nate(self):
-        response = self.client.get("/functionhub/hey/?input_name=Nate")
+        response = self.client.get("/function/hey/?input_name=Nate")
         self.assertContains(response, "Hey, Nate!")
 
     def test_hey_bcca(self):
-        response = self.client.get("/functionhub/hey/?input_name=BCCA")
+        response = self.client.get("/function/hey/?input_name=BCCA")
         self.assertContains(response, "Hey, BCCA!")
 
 class TestAgeIn(SimpleTestCase):
     def test_age_in_2050_born_2000(self):
-        response = self.client.get("/functionhub/age_in_2050/?birthyear=2000&ageyear=2050")
+        response = self.client.get("/function/age_in_2050/?birthyear=2000&ageyear=2050")
         self.assertContains(response, "50")
 
     def test_age_in_2050_born_0(self):
-        response = self.client.get("/functionhub/age_in_2050/?birthyear=0&ageyear=2050")
+        response = self.client.get("/function/age_in_2050/?birthyear=0&ageyear=2050")
         self.assertContains(response, "2050")
 
     def test_age_in_2010_born_1995(self):
-        response = self.client.get("/functionhub/age_in_2050/?birthyear=1995&ageyear=2010")
+        response = self.client.get("/function/age_in_2050/?birthyear=1995&ageyear=2010")
         self.assertContains(response, "15")
 
     def test_age_in_1950_born_1920(self):
-        response = self.client.get("/functionhub/age_in_2050/?birthyear=1920&ageyear=1950")
+        response = self.client.get("/function/age_in_2050/?birthyear=1920&ageyear=1950")
         self.assertContains(response, "30")
 
 
 class TestOrderTotal(SimpleTestCase):
     def test_order_total_0_0_0(self):
-        response = self.client.get("/functionhub/order/?Burger=0&Fries=0&Drink=0")
+        response = self.client.get("/function/order/?Burger=0&Fries=0&Drink=0")
         self.assertContains(response, "0.0")
 
     def test_order_total_1_1_1(self):
-        response = self.client.get("/functionhub/order/?Burger=1&Fries=1&Drink=1")
+        response = self.client.get("/function/order/?Burger=1&Fries=1&Drink=1")
         self.assertContains(response, "7.0")
 
     def test_order_total_2_3_4(self):
-        response = self.client.get("/functionhub/order/?Burger=2&Fries=3&Drink=4")
+        response = self.client.get("/function/order/?Burger=2&Fries=3&Drink=4")
         self.assertContains(response, "17.5")
 
     def test_order_total_4_3_2(self):
-        response = self.client.get("/functionhub/order/?Burger=4&Fries=3&Drink=2")
+        response = self.client.get("/function/order/?Burger=4&Fries=3&Drink=2")
         self.assertContains(response, "24.5")
 
 
